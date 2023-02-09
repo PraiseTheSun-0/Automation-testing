@@ -35,3 +35,16 @@
 //     }
 //   }
 // }
+Cypress.Commands.add('login', (username, password) => {
+  
+    cy.get('#username').type(username)
+  
+    cy.get('#password').type(password)
+
+    cy.contains('Sign In').click()
+  
+    cy.get('[data-test="sidenav-username"]').should('contain', username)
+  
+    //cy.getCookie('your-session-cookie').should('exist')
+  
+  })
