@@ -58,7 +58,13 @@ const BankAccountsContainer: React.FC<Props> = ({ authService, bankAccountsServi
   if (match.url === "/bankaccounts/new" && currentUser?.id) {
     return (
       <Paper className={classes.paper}>
-        <Typography component="h2" variant="h6" color="primary" gutterBottom>
+        <Typography
+          component="h2"
+          variant="h6"
+          color="primary"
+          gutterBottom
+          data-test="create-account-header"
+        >
           Create Bank Account
         </Typography>
         <BankAccountForm userId={currentUser?.id} createBankAccount={createBankAccount} />

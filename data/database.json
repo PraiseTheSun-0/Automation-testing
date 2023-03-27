@@ -217,7 +217,7 @@
       "bankName": "Kshlerin - Ledner Bank",
       "accountNumber": "3859571950",
       "routingNumber": "024971142",
-      "isDeleted": false,
+      "isDeleted": true,
       "createdAt": "2019-12-14T22:41:09.548Z",
       "modifiedAt": "2020-05-21T09:46:44.754Z"
     },
@@ -253,6 +253,72 @@
       "isDeleted": false,
       "createdAt": "2019-09-30T14:20:07.043Z",
       "modifiedAt": "2020-05-21T22:40:28.910Z"
+    },
+    {
+      "id": "Vc3_dcSik",
+      "uuid": "6f8f2ddc-bbee-41b5-b811-f6c7ac0bddd7",
+      "userId": "qywYp6hS0U",
+      "bankName": "The Best Bank",
+      "accountNumber": "123456789",
+      "routingNumber": "987654321",
+      "isDeleted": true,
+      "createdAt": "2023-03-27T19:49:55.313Z",
+      "modifiedAt": "2023-03-27T19:49:55.313Z"
+    },
+    {
+      "id": "EObXV-SfV",
+      "uuid": "4cf27a1c-e74c-4d2e-a94f-f3dddd65a98c",
+      "userId": "qywYp6hS0U",
+      "bankName": "The Best Bank",
+      "accountNumber": "123456789",
+      "routingNumber": "987654321",
+      "isDeleted": true,
+      "createdAt": "2023-03-27T20:15:13.950Z",
+      "modifiedAt": "2023-03-27T20:15:13.950Z"
+    },
+    {
+      "id": "FPXV_jv1J",
+      "uuid": "aa3014c4-2063-4655-9aa1-111cb0501906",
+      "userId": "qywYp6hS0U",
+      "bankName": "The Best Bank",
+      "accountNumber": "123456789",
+      "routingNumber": "987654321",
+      "isDeleted": true,
+      "createdAt": "2023-03-27T20:21:21.435Z",
+      "modifiedAt": "2023-03-27T20:21:21.435Z"
+    },
+    {
+      "id": "T_bNu-BNr",
+      "uuid": "f89e9be8-a7ba-4ca7-998a-1a0dc1f97118",
+      "userId": "qywYp6hS0U",
+      "bankName": "The Best Bank",
+      "accountNumber": "123456789",
+      "routingNumber": "987654321",
+      "isDeleted": true,
+      "createdAt": "2023-03-27T20:33:21.789Z",
+      "modifiedAt": "2023-03-27T20:33:21.789Z"
+    },
+    {
+      "id": "magNkOVcY",
+      "uuid": "19b54e86-ad00-4cbd-a13d-f55445e4efda",
+      "userId": "qywYp6hS0U",
+      "bankName": "The Best Bank",
+      "accountNumber": "123456789",
+      "routingNumber": "987654321",
+      "isDeleted": true,
+      "createdAt": "2023-03-27T20:39:30.354Z",
+      "modifiedAt": "2023-03-27T20:39:30.354Z"
+    },
+    {
+      "id": "W10TD7yRX",
+      "uuid": "2a94ba16-2113-47e9-9a6f-0ea3c5a0efbd",
+      "userId": "qywYp6hS0U",
+      "bankName": "The Best Bank",
+      "accountNumber": "123456789",
+      "routingNumber": "987654321",
+      "isDeleted": true,
+      "createdAt": "2023-03-27T20:41:48.768Z",
+      "modifiedAt": "2023-03-27T20:41:48.768Z"
     }
   ],
   "transactions": [

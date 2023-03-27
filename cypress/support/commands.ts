@@ -37,14 +37,45 @@
 // }
 Cypress.Commands.add('login', (username, password) => {
   
-    cy.get('#username').type(username)
-  
-    cy.get('#password').type(password)
-
-    cy.contains('Sign In').click()
-  
-    cy.get('[data-test="sidenav-username"]').should('contain', username)
+    cy.get('#username').type(username);
+    cy.get('#password').type(password);
+    cy.contains('Sign In').click();
+    cy.get('[data-test="sidenav-username"]').should('contain', username);
   
     //cy.getCookie('your-session-cookie').should('exist')
   
-  })
+})
+
+Cypress.Commands.add('prepareContext', function<T>(type: new (...args: any[]) => T){
+    // delete token
+    cy.visit('/');
+    cy.login(Cypress.env('username'), Cypress.env('password')).then((token) => {
+    // set token
+  
+        const ctx: T = new type(token);
+        cy.wrap(ctx, {log: false }).as('ctx');
+    });
+})
+
+Cypress.Commands.add('apiRequest', function(method: string, path: string, token: string, body?: object) {
+    return cy.request({
+      method: method,
+      url: `${Cypress.env('apiUrl')}${path}`,
+      // headers: 
+      body: body,
+    });
+})
+
+Cypress.Commands.add('getByDT', (dataTest: string) => {
+    return cy.get(`[data-test="${dataTest}"]`);
+})
+
+// Cypress.Commands.add('loginViaAPI', (username, password) => {
+//   cy.request('POST', `${Cypress.env('apiUrl')}/login`, {
+//     "type": "LOGIN",
+//     "username": username,
+//     "password": password
+// }).then((response) => {
+//     return cy.getCookie("connect.sid")
+//   })
+// })

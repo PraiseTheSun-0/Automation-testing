@@ -5,6 +5,8 @@ export default defineConfig({
     apiUrl: "http://localhost:3001",
     mobileViewportWidthBreakpoint: 414,
     coverage: false,
+    username: 'Tavares_Barrows',
+    password: 's3cret',
     codeCoverage: {
       url: "http://localhost:3001/__coverage__",
       exclude: "cypress/**/*.*",
