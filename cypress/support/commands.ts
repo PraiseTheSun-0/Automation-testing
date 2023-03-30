@@ -1,4 +1,7 @@
 /// <reference types="cypress" />
+
+import { Payment } from "../utils/models/payment-request";
+
 // ***********************************************
 // This example commands.ts shows you how to
 // create various custom commands and overwrite
@@ -68,6 +71,10 @@ Cypress.Commands.add('apiRequest', function(method: string, path: string, token:
 
 Cypress.Commands.add('getByDT', (dataTest: string) => {
     return cy.get(`[data-test="${dataTest}"]`);
+})
+
+Cypress.Commands.add('sendPayment', function(payment: Payment, token: string){
+    return cy.apiRequest('POST', '/transactions', token, payment);
 })
 
 // Cypress.Commands.add('loginViaAPI', (username, password) => {
