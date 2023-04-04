@@ -12,8 +12,12 @@ describe('Login tests', function(){
         cy.get('#password-helper-text').should('contain', 'Password must contain');
     })
 
-    it('logs in', function(){
+    it('logs in and out', function(){
         cy.visit('/');
         cy.login(Cypress.env('username'), Cypress.env('password'));
+
+        cy.contains("Logout").click();
+        cy.url().should('contain', "signin");
     })
+
 })

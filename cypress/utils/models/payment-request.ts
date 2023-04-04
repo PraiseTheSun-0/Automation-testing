@@ -1,4 +1,4 @@
-export class Payment {
+export class PaymentRequest{
     transactionType: string;
     amount: string;
     description: string;
