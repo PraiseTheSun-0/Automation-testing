@@ -66,4 +66,4 @@ phases:
   build:
     commands:
       - yarn start:ci & npx wait-on http://localhost:3000
-      - npx cypress run --browser $CY_BROWSER --spec "$CY_SPEC" --config "$CY_CONFIG"
+      - npx cypress run --browser $CY_BROWSER --spec "cypress/e2e" --config "$CY_CONFIG"
