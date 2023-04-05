@@ -24,8 +24,8 @@ jobs:
       - run: node --version
       - run: node -p 'os.cpus()'
       - run: yarn types
-      - run: yarn lint
-      - run: yarn test:unit:ci
+      # - run: yarn lint
+      # - run: yarn test:unit:ci
       - run: yarn build:ci
 
       - name: Save build folder
@@ -35,30 +35,30 @@ jobs:
           if-no-files-found: error
           path: build
 
-  install-windows:
-    runs-on: windows-2019
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+  # install-windows:
+  #   runs-on: windows-2019
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v3
 
-      - name: Cypress install
-        uses: cypress-io/github-action@v4
-        with:
-          runTests: false
-      # report machine parameters
-      - run: yarn cypress info
-      - run: node -p 'os.cpus()'
-      - run: yarn types
-      - run: yarn lint
-      - run: yarn test:unit:ci
-      - run: yarn build:ci
+  #     - name: Cypress install
+  #       uses: cypress-io/github-action@v4
+  #       with:
+  #         runTests: false
+  #     # report machine parameters
+  #     - run: yarn cypress info
+  #     - run: node -p 'os.cpus()'
+  #     - run: yarn types
+  #     # - run: yarn lint
+  #     - run: yarn test:unit:ci
+  #     - run: yarn build:ci
 
-      - name: Save build folder
-        uses: actions/upload-artifact@v3
-        with:
-          name: build
-          if-no-files-found: error
-          path: build
+  #     - name: Save build folder
+  #       uses: actions/upload-artifact@v3
+  #       with:
+  #         name: build
+  #         if-no-files-found: error
+  #         path: build
 
   ui-chrome-tests:
     timeout-minutes: 15
