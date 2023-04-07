@@ -10,11 +10,11 @@ describe('notification tests', function(){
 
     it('recieves notification', function(){
         cy.get<AuthorizedContext>('@ctx').then((ctx)=>{
-            cy.sendPayment(new Transaction(
+            const transaction = new Transaction(
                 12,
                 new Date().toString(),
-                "testing + " + getRandomString(5),
-                getRandomString(),
+                "testing-" + getRandomString(5),
+                "cy-" + getRandomString(3),
                 new Date().toString(),
                 "private",
                 "bDjUb4ir5O",
@@ -22,11 +22,17 @@ describe('notification tests', function(){
                 "complete",
                 uuid.v4(),
                 "payment"
-            ), ctx.token).then((interception)=>{
+            )
+            cy.sendPayment(transaction, ctx.token).then((interception)=>{
                 expect(interception.status).to.be.equal(200);
             });
-
-            cy.visit('/notifications');
+            
+            cy.contains("Logout").click();
+            cy.login("Allie2", Cypress.env("password"));
+            cy.get('[data-test="transaction-list"]')
+                .should('contain', "Arely Kertzmann paid Kaylin Homenick")
+                .and('contain', "-$12.00")
+                .and('contain', transaction.description);
         })
         
     })

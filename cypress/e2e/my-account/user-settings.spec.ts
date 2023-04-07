@@ -38,6 +38,7 @@ describe('User settings', function() {
             cy.wait('@patchUserSettings').then((interception)=>{
                 expect(interception.response?.statusCode).to.be.equal(204);
             });
+            cy.wait(2000);
             cy.reload();
 
             cy.get('[data-test="user-settings-firstName-input"]').invoke('val')
