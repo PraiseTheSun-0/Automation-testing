@@ -20,8 +20,8 @@ describe('User settings', function() {
                 cy.get('[data-test="transaction-create-submit-payment"]').click();
                 cy.get('[data-test="main"]').should('contain', "Paid $1.00 for " + id);
                 
-                cy.visit('/personal');
                 cy.wait(2000);
+                cy.visit('/personal');
 
                 cy.get('[data-test="transaction-list"]').should('contain', "Arely Kertzmann paid Kaylin Homenick")
                     .and('contain', id);

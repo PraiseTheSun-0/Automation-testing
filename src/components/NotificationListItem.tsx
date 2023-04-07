@@ -80,7 +80,7 @@ const NotificationListItem: React.FC<NotificationListItemProps> = ({
   }
 
   return (
-    <ListItem data-test={`notification-list-item-${notification.id}`}>
+    <ListItem data-test={`notification-list-item-${notification.transactionId}`}>
       <ListItemIcon>{listItemIcon!}</ListItemIcon>
       <ListItemText primary={listItemText} />
       {xsBreakpoint && (

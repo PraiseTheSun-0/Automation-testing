@@ -25,14 +25,14 @@ describe('notification tests', function(){
             )
             cy.sendPayment(transaction, ctx.token).then((interception)=>{
                 expect(interception.status).to.be.equal(200);
+                console.log(interception);
+                let id = interception.body.transaction.id;
+                cy.contains("Logout").click();
+                cy.login("Allie2", Cypress.env("password"));
+                cy.visit('/notifications');
+                cy.get(`[data-test="notification-list-item-${id}"]`).should('be.visible');
             });
             
-            cy.contains("Logout").click();
-            cy.login("Allie2", Cypress.env("password"));
-            cy.get('[data-test="transaction-list"]')
-                .should('contain', "Arely Kertzmann paid Kaylin Homenick")
-                .and('contain', "-$12.00")
-                .and('contain', transaction.description);
         })
         
     })
