@@ -1,13 +1,7 @@
-describe('Home search tabs', function() {
+describe('Home search tabs tests', function() {
     beforeEach(function(){
-      // cy.loginViaAPI(Cypress.env('username'), Cypress.env('password')).then((token)=>{
-      //   cy.log(token)
-      //   cy.setCookie(token.name, token.value)
-        
-      // })
       cy.visit('/');
       cy.login(Cypress.env('username'), Cypress.env('password'));
-
     })
 
     it('opens "everyone" tab', function() {

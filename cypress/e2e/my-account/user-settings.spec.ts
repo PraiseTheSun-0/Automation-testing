@@ -1,6 +1,5 @@
 import { SettingsContext } from "../../utils/contexts/settings-context"
 
-
 describe('User settings', function() {
     beforeEach(function(){
         cy.prepareContext<SettingsContext>(SettingsContext)

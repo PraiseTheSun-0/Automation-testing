@@ -1,7 +1,6 @@
 import { AuthorizedContext } from "../../utils/contexts/authorized-context"
 import { getBankAccountNumber, getBankAccountNumberHelper, getBankNameHelper, getBankNameInput, getBankRoutingNumber, getBankRoutingNumberHelper, getCreateAccountHeader } from "../../utils/pages/bank-accounts"
 
-
 describe('Interacting with bank accounts tests', function(){
     beforeEach(function(){
         cy.prepareContext<AuthorizedContext>(AuthorizedContext)

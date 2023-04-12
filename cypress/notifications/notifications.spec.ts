@@ -1,9 +1,9 @@
-import { AuthorizedContext } from "../../utils/contexts/authorized-context";
+import { AuthorizedContext } from "../utils/contexts/authorized-context";
 import * as uuid from "uuid";
-import { Transaction } from "../../utils/models/transaction";
-import { getRandomString } from "../../utils/generateId";
+import { Transaction } from "../utils/models/transaction";
+import { getRandomString } from "../utils/generateId";
 
-describe('notification tests', function(){
+describe('Notification tests', function(){
     beforeEach(function(){
         cy.prepareContext<AuthorizedContext>(AuthorizedContext);
     })
