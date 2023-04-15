@@ -20,4 +20,10 @@ describe('Login tests', function(){
         cy.url().should('contain', "signin");
     })
 
+    it('login visual', function(){
+        cy.visit('/');
+        cy.wait(2000);
+        cy.matchImageSnapshot("login");
+    })
+
 })

@@ -1,4 +1,6 @@
-import { defineConfig } from "cypress";
+import cypress, { defineConfig } from "cypress";
+
+import {addMatchImageSnapshotPlugin} from "cypress-image-snapshot/plugin"
 
 export default defineConfig({
   env: {
@@ -51,6 +53,7 @@ export default defineConfig({
     },
   },
   e2e: {
+    retries: 1,
     baseUrl: "http://localhost:3000",
     specPattern: "cypress/e2e/**/*.spec.{js,jsx,ts,tsx}",
     supportFile: "cypress/support/e2e.ts",
@@ -58,6 +61,7 @@ export default defineConfig({
     viewportWidth: 1280,
     setupNodeEvents(on, config) {
       require('cypress-terminal-report/src/installLogsPrinter')(on, {printLogsToConsole:"always"});
+      addMatchImageSnapshotPlugin(on, config);
       // const testDataApiEndpoint = `${config.env.apiUrl}/testData`;
 
       // const queryDatabase = ({ entity, query }, callback) => {

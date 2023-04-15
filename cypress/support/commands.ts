@@ -2,6 +2,7 @@
 
 import { string } from "yup";
 import { Payment } from "../utils/models/payment-request";
+import { addMatchImageSnapshotCommand } from 'cypress-image-snapshot/command';
 
 // ***********************************************
 // This example commands.ts shows you how to
@@ -39,6 +40,9 @@ import { Payment } from "../utils/models/payment-request";
 //     }
 //   }
 // }
+
+addMatchImageSnapshotCommand();
+
 Cypress.Commands.add('login', (username, password) => {
   
     cy.get('#username').type(username);
