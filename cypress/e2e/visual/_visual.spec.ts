@@ -39,7 +39,7 @@ describe('Visual tests', function(){
     it('visits friends page', function(){
         cy.visit('/');
         cy.login(Cypress.env('username'), Cypress.env('password'));
-        cy.visit('/contacts');
+        cy.contains("Friends").click()
         cy.wait(2000);
         cy.matchImageSnapshot();
     })
@@ -47,7 +47,7 @@ describe('Visual tests', function(){
     it('visits mine page', function(){
         cy.visit('/');
         cy.login(Cypress.env('username'), Cypress.env('password'));
-        cy.visit('/personal');
+        cy.contains("Mine").click();
         cy.wait(2000);
         cy.matchImageSnapshot();
     })
