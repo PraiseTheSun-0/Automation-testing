@@ -21,24 +21,6 @@ export default defineConfig({
     auth0_password: process.env.AUTH0_PASSWORD,
     auth0_domain: process.env.REACT_APP_AUTH0_DOMAIN,
 
-    // // Okta
-    // okta_username: process.env.OKTA_USERNAME,
-    // okta_password: process.env.OKTA_PASSWORD,
-    // okta_domain: process.env.REACT_APP_OKTA_DOMAIN,
-    // okta_client_id: process.env.REACT_APP_OKTA_CLIENTID,
-    // okta_programmatic_login: process.env.OKTA_PROGRAMMATIC_LOGIN || false,
-
-    // // Amazon Cognito
-    // cognito_username: process.env.AWS_COGNITO_USERNAME,
-    // cognito_password: process.env.AWS_COGNITO_PASSWORD,
-    // cognito_domain: process.env.AWS_COGNITO_DOMAIN,
-    // cognito_programmatic_login: false,
-    // //awsConfig: awsConfig.default,
-
-    // // Google
-    // googleRefreshToken: process.env.GOOGLE_REFRESH_TOKEN,
-    // googleClientId: process.env.REACT_APP_GOOGLE_CLIENTID,
-    // googleClientSecret: process.env.REACT_APP_GOOGLE_CLIENT_SECRET,
   },
   component: {
     devServer: {
@@ -48,7 +30,6 @@ export default defineConfig({
     specPattern: "src/**/*.cy.{js,jsx,ts,tsx}",
     supportFile: "cypress/support/component.ts",
     setupNodeEvents(on, config) {
-      //codeCoverageTask(on, config);
       return config;
     },
   },
@@ -62,35 +43,6 @@ export default defineConfig({
     setupNodeEvents(on, config) {
       require('cypress-terminal-report/src/installLogsPrinter')(on, {printLogsToConsole:"always"});
       addMatchImageSnapshotPlugin(on, config);
-      // const testDataApiEndpoint = `${config.env.apiUrl}/testData`;
-
-      // const queryDatabase = ({ entity, query }, callback) => {
-      //   const fetchData = async (attrs) => {
-      //     const { data } = await axios.get(`${testDataApiEndpoint}/${entity}`);
-      //     return callback(data, attrs);
-      //   };
-
-      //   return Array.isArray(query) ? Promise.map(query, fetchData) : fetchData(query);
-      // };
-
-      // on("task", {
-      //   percyHealthCheck,
-      //   async "db:seed"() {
-      //     // seed database with test data
-      //     const { data } = await axios.post(`${testDataApiEndpoint}/seed`);
-      //     return data;
-      //   },
-
-      //   // fetch test data from a database (MySQL, PostgreSQL, etc...)
-      //   "filter:database"(queryPayload) {
-      //     return queryDatabase(queryPayload, (data, attrs) => _.filter(data.results, attrs));
-      //   },
-      //   "find:database"(queryPayload) {
-      //     return queryDatabase(queryPayload, (data, attrs) => _.find(data.results, attrs));
-      //   },
-      //});
-
-      //codeCoverageTask(on, config);
       return config;
     },
   },
